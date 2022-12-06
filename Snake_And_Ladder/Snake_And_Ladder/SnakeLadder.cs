@@ -83,10 +83,12 @@ namespace Snake_And_Ladder
 
 
         readonly Random random = new Random();
+        int diceThrown = 0;
         public int RollDie()
         {
             int dice, check;
             dice = random.Next(1, 7);
+            diceThrown++;
             Console.WriteLine($"Dice = {dice}");
             check = CheckPlay();
             //Roll die to produce random number between 1-6
@@ -109,7 +111,8 @@ namespace Snake_And_Ladder
             {
                 //at the start
                 Start();
-            }
+            Console.WriteLine($"Number of Times Dice Thrown: {diceThrown}");
+        }
         
     }
 }
